@@ -6,7 +6,7 @@
     "root": ".",
 
     "plugins": [
-        "splitter"
+        "chapter-fold"
     ],
 
     "pluginsConfig": {

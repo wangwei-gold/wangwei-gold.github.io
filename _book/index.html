@@ -17,7 +17,7 @@
     
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
                 
             
                 
@@ -189,18 +189,21 @@
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
-                                
-                                <h1 id="wangwei-goldgithubio">wangwei-gold.github.io</h1>
-<p>gitbook build</p>
-<h3 id="&#x5EFA;&#x7ACB;&#x5206;&#x652F;-gh-pages-&#x7528;&#x4E8E;&#x663E;&#x793A;&#x9759;&#x6001;&#x7F51;&#x9875;">&#x5EFA;&#x7ACB;&#x5206;&#x652F; gh-pages &#x7528;&#x4E8E;&#x663E;&#x793A;&#x9759;&#x6001;&#x7F51;&#x9875;</h3>
-<p>git checkout -b gh-pages</p>
-<h3 id="&#x540C;&#x6B65;&#x62F7;&#x8D1D;-master-&#x76EE;&#x5F55;&#x5F97;&#x5230;&#x7684;-book-&#x5230;-gh-pages">&#x540C;&#x6B65;&#x62F7;&#x8D1D; master &#x76EE;&#x5F55;&#x5F97;&#x5230;&#x7684; _book &#x5230; gh-pages</h3>
-<p>git checkout master -- _book
-cp -r _book/* ./</p>
-<h3 id="&#x63D0;&#x4EA4;&#x66F4;&#x65B0;">&#x63D0;&#x4EA4;&#x66F4;&#x65B0;</h3>
-<p>git add ./*
-git commit -m &apos;update gh-pages&apos;
-git push origin gh-pages</p>
+<!--
+ * @Author: your name
+ * @Date: 2020-09-29 10:32:56
+ * @LastEditTime: 2020-09-29 10:35:07
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /wangwei-gold.github.io/README.md
+-->
+<h1 id="wangwei-goldgithubio">wangwei-gold.github.io</h1>
+<h2 id="gitbook-&#x53D1;&#x5E03;&#x5230;github&#x6559;&#x7A0B;">gitbook &#x53D1;&#x5E03;&#x5230;github&#x6559;&#x7A0B;</h2>
+<h3 id="1&#x5728;master&#x5206;&#x652F;&#x4E0A;&#x8FDB;&#x884C;&#x6587;&#x6863;&#x7F16;&#x8F91;">1.&#x5728;master&#x5206;&#x652F;&#x4E0A;&#x8FDB;&#x884C;&#x6587;&#x6863;&#x7F16;&#x8F91;</h3>
+<h3 id="2&#x7F16;&#x8BD1;&#x5B8C;&#x6210;&#x540E;&#x63D0;&#x4EA4;&#x4EE3;&#x7801;">2.&#x7F16;&#x8BD1;&#x5B8C;&#x6210;&#x540E;&#x63D0;&#x4EA4;&#x4EE3;&#x7801;</h3>
+<h3 id="3&#x6267;&#x884C;gitbook-build">3.&#x6267;&#x884C;gitbook build</h3>
+<h3 id="4cp--r-book-&#x590D;&#x5236;">4.cp -r _book/* ./&#x590D;&#x5236;</h3>
+<h3 id="5&#x63D0;&#x4EA4;&#x4EE3;&#x7801;">5.&#x63D0;&#x4EA4;&#x4EE3;&#x7801;</h3>
 
                                 
                                 </section>
@@ -240,7 +243,8 @@ git push origin gh-pages</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"设计模式","level":"2.1","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"设计模式简介","level":"2.1.1","depth":2,"path":"design_patterns/设计模式介绍.md","ref":"design_patterns/设计模式介绍.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["splitter"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"splitter":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"sphard","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"王伟的学习资料","language":"zh-hans","gitbook":"*","description":"王伟的学习资料"},"file":{"path":"README.md","mtime":"2020-09-29T03:53:33.287Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-29T03:56:07.093Z"},"basePath":".","book":{"language":""}});
+
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"设计模式","level":"2.1","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"设计模式简介","level":"2.1.1","depth":2,"path":"design_patterns/设计模式介绍.md","ref":"design_patterns/设计模式介绍.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["chapter-fold","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"sphard","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"王伟的学习资料","language":"zh-hans","gitbook":"*","description":"gitbook电子书教程"},"file":{"path":"README.md","mtime":"2020-09-29T03:57:09.069Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-29T03:58:21.926Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -250,7 +254,12 @@ git push origin gh-pages</p>
     <script src="gitbook/theme.js"></script>
     
         
-        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+
+        <script src="gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
