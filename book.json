@@ -6,10 +6,7 @@
     "root": ".",
 
     "plugins": [
-        "donate",
-        "github-buttons@2.1.0",
-        "edit-link",
-        "splitter"
+        "chapter-fold"
     ],
 
     "pluginsConfig": {
