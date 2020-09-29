@@ -1,14 +1,11 @@
 {
     "title": "王伟的学习资料",
-    "description": "gitbook电子书教程",
+    "description": "王伟的学习资料",
     "author": "sphard",
     "language": "zh-hans",
     "root": ".",
 
     "plugins": [
-        "donate",
-        "github-buttons@2.1.0",
-        "edit-link",
         "splitter"
     ],
 
