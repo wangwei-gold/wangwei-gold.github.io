@@ -6,10 +6,15 @@
     "root": ".",
 
     "plugins": [
-        "chapter-fold"
+        "chapter-fold",
+        "toc",
+        "simple-page-toc"
     ],
 
     "pluginsConfig": {
-        
+        "simple-page-toc": {
+            "maxDepth": 3,
+            "skipFirstH1": true
+        }
     }
 }

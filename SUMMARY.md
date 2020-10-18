@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-09-29 10:32:56
- * @LastEditTime: 2020-10-18 18:58:21
+ * @LastEditTime: 2020-10-19 00:15:01
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /wangwei-gold.github.io/SUMMARY.md
@@ -12,6 +12,7 @@
 
 * [设计模式](design_patterns/README.md)
    * [设计模式简介](design_patterns/设计模式介绍.md)
+   * [动态代理](design_patterns/动态代理模式.md)
 * [多线程与高并发](多线程与高并发/README.md)
    * [基础概念](多线程与高并发/基础概念.md)
 * [RPC](RPC/README.md)
