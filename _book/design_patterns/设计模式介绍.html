@@ -295,12 +295,422 @@
                                 <!--
  * @Author: your name
  * @Date: 2020-09-29 10:37:08
- * @LastEditTime: 2020-09-29 10:37:25
- * @LastEditors: your name
+ * @LastEditTime: 2020-10-19 09:17:32
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /wangwei-gold.github.io/design_patterns/设计模式介绍.md
 -->
 <h3 id="&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x7B80;&#x4ECB;">&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x7B80;&#x4ECB;</h3>
+<p>&#x4EE3;&#x7406;&#x6A21;&#x5F0F;
+&#x4E3A;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x4EE5;&#x63A7;&#x5236;&#x5BF9;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x8BBF;&#x95EE;&#x3002;&#x4EE3;&#x7406;&#x7C7B;&#x4E3B;&#x8981;&#x8D1F;&#x8D23;&#x4E3A;&#x59D4;&#x6258;&#x4E86;&#xFF08;&#x771F;&#x5B9E;&#x5BF9;&#x8C61;&#xFF09;&#x9884;&#x5904;&#x7406;&#x6D88;&#x606F;&#x3001;&#x8FC7;&#x6EE4;&#x6D88;&#x606F;&#x3001;&#x4F20;&#x9012;&#x6D88;&#x606F;&#x7ED9;&#x59D4;&#x6258;&#x7C7B;&#xFF0C;&#x4EE3;&#x7406;&#x7C7B;&#x4E0D;&#x73B0;&#x5B9E;&#x5177;&#x4F53;&#x670D;&#x52A1;&#xFF0C;&#x800C;&#x662F;&#x5229;&#x7528;&#x59D4;&#x6258;&#x7C7B;&#x6765;&#x5B8C;&#x6210;&#x670D;&#x52A1;&#xFF0C;&#x5E76;&#x5C06;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x5C01;&#x88C5;&#x5904;&#x7406;&#x3002;</p>
+<p>&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4EE3;&#x7406;&#x7C7B;&#x4E3A;&#x88AB;&#x4EE3;&#x7406;&#x7C7B;&#x9884;&#x5904;&#x7406;&#x6D88;&#x606F;&#x3001;&#x8FC7;&#x6EE4;&#x6D88;&#x606F;&#x5E76;&#x5728;&#x6B64;&#x4E4B;&#x540E;&#x5C06;&#x6D88;&#x606F;&#x8F6C;&#x53D1;&#x7ED9;&#x88AB;&#x4EE3;&#x7406;&#x7C7B;&#xFF0C;&#x4E4B;&#x540E;&#x8FD8;&#x80FD;&#x8FDB;&#x884C;&#x6D88;&#x606F;&#x7684;&#x540E;&#x7F6E;&#x5904;&#x7406;&#x3002;&#x4EE3;&#x7406;&#x7C7B;&#x548C;&#x88AB;&#x4EE3;&#x7406;&#x7C7B;&#x901A;&#x5E38;&#x4F1A;&#x5B58;&#x5728;&#x5173;&#x8054;&#x5173;&#x7CFB;(&#x5373;&#x4E0A;&#x9762;&#x63D0;&#x5230;&#x7684;&#x6301;&#x6709;&#x7684;&#x88AB;&#x5E26;&#x79BB;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;)&#xFF0C;&#x4EE3;&#x7406;&#x7C7B;&#x672C;&#x8EAB;&#x4E0D;&#x5B9E;&#x73B0;&#x670D;&#x52A1;&#xFF0C;&#x800C;&#x662F;&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x88AB;&#x4EE3;&#x7406;&#x7C7B;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x3002;</p>
+<p>&#x9759;&#x6001;&#x4EE3;&#x7406;
+&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x7136;&#x540E;&#x521B;&#x5EFA;&#x88AB;&#x4EE3;&#x7406;&#x7684;&#x7C7B;&#x5B9E;&#x73B0;&#x8BE5;&#x63A5;&#x53E3;&#x5E76;&#x4E14;&#x5B9E;&#x73B0;&#x8BE5;&#x63A5;&#x53E3;&#x4E2D;&#x7684;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x3002;&#x4E4B;&#x540E;&#x518D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x7C7B;&#xFF0C;&#x540C;&#x65F6;&#x4F7F;&#x5176;&#x4E5F;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x3002;&#x5728;&#x4EE3;&#x7406;&#x7C7B;&#x4E2D;&#x6301;&#x6709;&#x4E00;&#x4E2A;&#x88AB;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x800C;&#x540E;&#x5728;&#x4EE3;&#x7406;&#x7C7B;&#x65B9;&#x6CD5;&#x4E2D;&#x8C03;&#x7528;&#x8BE5;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x63A5;&#x53E3;&#xFF1A;</p>
+<p>public interface HelloInterface {
+    void sayHello();
+}</p>
+<p>&#x88AB;&#x4EE3;&#x7406;&#x7C7B;&#xFF1A;</p>
+<p>public class Hello implements HelloInterface{
+    @Override
+    public void sayHello() {
+        System.out.println(&quot;Hello zhanghao!&quot;);
+    }
+}
+&#x4EE3;&#x7406;&#x7C7B;&#xFF1A;</p>
+<p>public class HelloProxy implements HelloInterface{
+    private HelloInterface helloInterface = new Hello();
+    @Override
+    public void sayHello() {
+        System.out.println(&quot;Before invoke sayHello&quot; );
+        helloInterface.sayHello();
+        System.out.println(&quot;After invoke sayHello&quot;);
+    }
+}
+&#x4EE3;&#x7406;&#x7C7B;&#x8C03;&#x7528;&#xFF1A;
+&#x88AB;&#x4EE3;&#x7406;&#x7C7B;&#x88AB;&#x4F20;&#x9012;&#x7ED9;&#x4E86;&#x4EE3;&#x7406;&#x7C7B;HelloProxy&#xFF0C;&#x4EE3;&#x7406;&#x7C7B;&#x5728;&#x6267;&#x884C;&#x5177;&#x4F53;&#x65B9;&#x6CD5;&#x65F6;&#x901A;&#x8FC7;&#x6240;&#x6301;&#x7528;&#x7684;&#x88AB;&#x4EE3;&#x7406;&#x7C7B;&#x5B8C;&#x6210;&#x8C03;&#x7528;&#x3002;</p>
+<pre><code>public static void main(String[] args) {
+    HelloProxy helloProxy = new HelloProxy();
+    helloProxy.sayHello();
+}
+</code></pre><p>&#x8F93;&#x51FA;&#xFF1A;
+Before invoke sayHello
+Hello zhanghao!
+After invoke sayHello</p>
+<p>&#x4F7F;&#x7528;&#x9759;&#x6001;&#x4EE3;&#x7406;&#x5F88;&#x5BB9;&#x6613;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x5BF9;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x4EE3;&#x7406;&#x64CD;&#x4F5C;&#x3002;&#x4F46;&#x662F;&#x9759;&#x6001;&#x4EE3;&#x7406;&#x7684;&#x7F3A;&#x70B9;&#x4E5F;&#x66B4;&#x9732;&#x4E86;&#x51FA;&#x6765;&#xFF1A;&#x7531;&#x4E8E;&#x4EE3;&#x7406;&#x53EA;&#x80FD;&#x4E3A;&#x4E00;&#x4E2A;&#x7C7B;&#x670D;&#x52A1;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x4EE3;&#x7406;&#x7684;&#x7C7B;&#x5F88;&#x591A;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x9700;&#x8981;&#x7F16;&#x5199;&#x5927;&#x91CF;&#x7684;&#x4EE3;&#x7406;&#x7C7B;&#xFF0C;&#x6BD4;&#x8F83;&#x7E41;&#x7410;&#x3002;</p>
+<p>&#x52A8;&#x6001;&#x4EE3;&#x7406;
+&#x5229;&#x7528;&#x53CD;&#x5C04;&#x673A;&#x5236;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x521B;&#x5EFA;&#x4EE3;&#x7406;&#x7C7B;&#x3002;
+&#x63A5;&#x53E3;&#x3001;&#x88AB;&#x4EE3;&#x7406;&#x7C7B;&#x4E0D;&#x53D8;&#xFF0C;&#x6211;&#x4EEC;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;handler&#x7C7B;&#x6765;&#x5B9E;&#x73B0;InvocationHandler&#x63A5;&#x53E3;&#x3002;</p>
+<p>public class ProxyHandler implements InvocationHandler{
+    private Object object;
+    public ProxyHandler(Object object){
+        this.object = object;
+    }
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        System.out.println(&quot;Before invoke &quot;  + method.getName());
+        method.invoke(object, args);
+        System.out.println(&quot;After invoke &quot; + method.getName());
+        return null;
+    }
+}
+&#x6267;&#x884C;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#xFF1A;</p>
+<pre><code>public static void main(String[] args) {
+    System.getProperties().setProperty(&quot;sun.misc.ProxyGenerator.saveGeneratedFiles&quot;, &quot;true&quot;);
+
+    HelloInterface hello = new Hello();
+
+    InvocationHandler handler = new ProxyHandler(hello);
+
+    HelloInterface proxyHello = (HelloInterface) Proxy.newProxyInstance(hello.getClass().getClassLoader(), hello.getClass().getInterfaces(), handler);
+
+    proxyHello.sayHello();
+}
+&#x8F93;&#x51FA;&#xFF1A;
+Before invoke sayHello
+Hello zhanghao!
+After invoke sayHello
+</code></pre><p>&#x901A;&#x8FC7;Proxy&#x7C7B;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;newProxyInstance&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x7684;&#x4EE3;&#x7406;&#x5B9E;&#x4F8B;&#x3002;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x7684;&#x4EE3;&#x7406;&#x7C7B;&#xFF0C;&#x4F20;&#x5165;&#x76F8;&#x5E94;&#x7684;&#x4EE3;&#x7406;&#x7A0B;&#x5E8F;&#x63A7;&#x5236;&#x5668;InvocationHandler&#x3002;
+&#x5982;&#x679C;&#x65B0;&#x6765;&#x4E00;&#x4E2A;&#x88AB;&#x4EE3;&#x7406;&#x7C7B;Bye&#xFF0C;&#x5982;&#xFF1A;</p>
+<p>public interface ByeInterface {
+    void sayBye();
+}
+public class Bye implements ByeInterface {
+    @Override
+    public void sayBye() {
+        System.out.println(&quot;Bye zhanghao!&quot;);
+    }
+}
+&#x90A3;&#x4E48;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<pre><code>public static void main(String[] args) {
+    System.getProperties().setProperty(&quot;sun.misc.ProxyGenerator.saveGeneratedFiles&quot;, &quot;true&quot;);
+
+    HelloInterface hello = new Hello();
+    ByeInterface bye = new Bye();
+
+    InvocationHandler handler = new ProxyHandler(hello);
+    InvocationHandler handler1 = new ProxyHandler(bye);
+
+    HelloInterface proxyHello = (HelloInterface) Proxy.newProxyInstance(hello.getClass().getClassLoader(), hello.getClass().getInterfaces(), handler);
+
+    ByeInterface proxyBye = (ByeInterface) Proxy.newProxyInstance(bye.getClass().getClassLoader(), bye.getClass().getInterfaces(), handler1);
+    proxyHello.sayHello();
+    proxyBye.sayBye();
+}
+&#x8F93;&#x51FA;&#xFF1A;
+Before invoke sayHello
+Hello zhanghao!
+After invoke sayHello
+Before invoke sayBye
+Bye zhanghao!
+After invoke sayBye
+</code></pre><p>&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x5E95;&#x5C42;&#x5B9E;&#x73B0;
+&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x5177;&#x4F53;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<p>&#x901A;&#x8FC7;&#x5B9E;&#x73B0; InvocationHandler &#x63A5;&#x53E3;&#x521B;&#x5EFA;&#x81EA;&#x5DF1;&#x7684;&#x8C03;&#x7528;&#x5904;&#x7406;&#x5668;&#xFF1B;
+&#x901A;&#x8FC7;&#x4E3A; Proxy &#x7C7B;&#x6307;&#x5B9A; ClassLoader &#x5BF9;&#x8C61;&#x548C;&#x4E00;&#x7EC4; interface &#x6765;&#x521B;&#x5EFA;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x7C7B;&#xFF1B;
+&#x901A;&#x8FC7;&#x53CD;&#x5C04;&#x673A;&#x5236;&#x83B7;&#x5F97;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x5176;&#x552F;&#x4E00;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x662F;&#x8C03;&#x7528;&#x5904;&#x7406;&#x5668;&#x63A5;&#x53E3;&#x7C7B;&#x578B;&#xFF1B;
+&#x901A;&#x8FC7;&#x6784;&#x9020;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x7C7B;&#x5B9E;&#x4F8B;&#xFF0C;&#x6784;&#x9020;&#x65F6;&#x8C03;&#x7528;&#x5904;&#x7406;&#x5668;&#x5BF9;&#x8C61;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x88AB;&#x4F20;&#x5165;&#x3002;
+&#x65E2;&#x7136;&#x751F;&#x6210;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x662F;&#x7528;&#x7684;Proxy&#x7C7B;&#x7684;&#x9759;&#x6001;&#x65B9;newProxyInstance&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5C31;&#x53BB;&#x5B83;&#x7684;&#x6E90;&#x7801;&#x91CC;&#x770B;&#x4E00;&#x4E0B;&#x5B83;&#x5230;&#x5E95;&#x90FD;&#x505A;&#x4E86;&#x4E9B;&#x4EC0;&#x4E48;&#xFF1F;</p>
+<pre><code>public static Object newProxyInstance(ClassLoader loader,
+                                      Class&lt;?&gt;[] interfaces,
+                                      InvocationHandler h)
+    throws IllegalArgumentException
+{
+    Objects.requireNonNull(h);
+
+    final Class&lt;?&gt;[] intfs = interfaces.clone();
+    final SecurityManager sm = System.getSecurityManager();
+    if (sm != null) {
+        checkProxyAccess(Reflection.getCallerClass(), loader, intfs);
+    }
+     //&#x751F;&#x6210;&#x4EE3;&#x7406;&#x7C7B;&#x5BF9;&#x8C61;
+    Class&lt;?&gt; cl = getProxyClass0(loader, intfs);
+
+    //&#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7684;&#x8C03;&#x7528;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x83B7;&#x53D6;&#x4EE3;&#x7406;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5BF9;&#x8C61;
+    try {
+        if (sm != null) {
+            checkNewProxyPermission(Reflection.getCallerClass(), cl);
+        }
+
+        final Constructor&lt;?&gt; cons = cl.getConstructor(constructorParams);
+        final InvocationHandler ih = h;
+        //&#x5982;&#x679C;Class&#x4F5C;&#x7528;&#x57DF;&#x4E3A;&#x79C1;&#x6709;&#xFF0C;&#x901A;&#x8FC7; setAccessible &#x652F;&#x6301;&#x8BBF;&#x95EE;
+        if (!Modifier.isPublic(cl.getModifiers())) {
+            AccessController.doPrivileged(new PrivilegedAction&lt;Void&gt;() {
+                public Void run() {
+                    cons.setAccessible(true);
+                    return null;
+                }
+            });
+        }
+        //&#x83B7;&#x53D6;Proxy Class&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x521B;&#x5EFA;Proxy&#x4EE3;&#x7406;&#x5B9E;&#x4F8B;&#x3002;
+        return cons.newInstance(new Object[]{h});
+    } catch (IllegalAccessException|InstantiationException e) {
+        throw new InternalError(e.toString(), e);
+    } catch (InvocationTargetException e) {
+        Throwable t = e.getCause();
+        if (t instanceof RuntimeException) {
+            throw (RuntimeException) t;
+        } else {
+            throw new InternalError(t.toString(), t);
+        }
+    } catch (NoSuchMethodException e) {
+        throw new InternalError(e.toString(), e);
+    }
+}
+</code></pre><p>&#x5229;&#x7528;getProxyClass0(loader, intfs)&#x751F;&#x6210;&#x4EE3;&#x7406;&#x7C7B;Proxy&#x7684;Class&#x5BF9;&#x8C61;&#x3002;</p>
+<pre><code>private static Class&lt;?&gt; getProxyClass0(ClassLoader loader,
+                                       Class&lt;?&gt;... interfaces) {
+    //&#x5982;&#x679C;&#x63A5;&#x53E3;&#x6570;&#x91CF;&#x5927;&#x4E8E;65535&#xFF0C;&#x629B;&#x51FA;&#x975E;&#x6CD5;&#x53C2;&#x6570;&#x9519;&#x8BEF;
+    if (interfaces.length &gt; 65535) {
+        throw new IllegalArgumentException(&quot;interface limit exceeded&quot;);
+    }
+
+
+    //&#x5982;&#x679C;&#x6307;&#x5B9A;&#x63A5;&#x53E3;&#x7684;&#x4EE3;&#x7406;&#x7C7B;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x4E0E;&#x7F13;&#x5B58;&#x4E2D;&#xFF0C;&#x5219;&#x4E0D;&#x7528;&#x65B0;&#x521B;&#x5EFA;&#xFF0C;&#x76F4;&#x63A5;&#x4ECE;&#x7F13;&#x5B58;&#x4E2D;&#x53D6;&#x5373;&#x53EF;&#xFF1B;
+    //&#x5982;&#x679C;&#x7F13;&#x5B58;&#x4E2D;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#xFF0C;&#x5219;&#x901A;&#x8FC7;ProxyClassFactory&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x3002;
+    return proxyClassCache.get(loader, interfaces);
+}
+</code></pre><p>ProxyClassFactory&#x5185;&#x90E8;&#x7C7B;&#x521B;&#x5EFA;&#x3001;&#x5B9A;&#x4E49;&#x4EE3;&#x7406;&#x7C7B;&#xFF0C;&#x8FD4;&#x56DE;&#x7ED9;&#x5B9A;ClassLoader &#x548C;interfaces&#x7684;&#x4EE3;&#x7406;&#x7C7B;&#x3002;</p>
+<pre><code>    private static final class ProxyClassFactory
+    implements BiFunction&lt;ClassLoader, Class&lt;?&gt;[], Class&lt;?&gt;&gt;{
+    // &#x4EE3;&#x7406;&#x7C7B;&#x7684;&#x540D;&#x5B57;&#x7684;&#x524D;&#x7F00;&#x7EDF;&#x4E00;&#x4E3A;&#x201C;$Proxy&#x201D;
+    private static final String proxyClassNamePrefix = &quot;$Proxy&quot;;
+
+    // &#x6BCF;&#x4E2A;&#x4EE3;&#x7406;&#x7C7B;&#x524D;&#x7F00;&#x540E;&#x9762;&#x90FD;&#x4F1A;&#x8DDF;&#x7740;&#x4E00;&#x4E2A;&#x552F;&#x4E00;&#x7684;&#x7F16;&#x53F7;&#xFF0C;&#x5982;$Proxy0&#x3001;$Proxy1&#x3001;$Proxy2
+    private static final AtomicLong nextUniqueNumber = new AtomicLong();
+
+    @Override
+    public Class&lt;?&gt; apply(ClassLoader loader, Class&lt;?&gt;[] interfaces) {
+
+        Map&lt;Class&lt;?&gt;, Boolean&gt; interfaceSet = new IdentityHashMap&lt;&gt;(interfaces.length);
+        for (Class&lt;?&gt; intf : interfaces) {
+            //&#x9A8C;&#x8BC1;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x52A0;&#x8F7D;&#x63A5;&#x53E3;&#x5F97;&#x5230;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x4E0E;&#x7531;apply&#x51FD;&#x6570;&#x53C2;&#x6570;&#x4F20;&#x5165;&#x7684;&#x5BF9;&#x8C61;&#x76F8;&#x540C;
+            Class&lt;?&gt; interfaceClass = null;
+            try {
+                interfaceClass = Class.forName(intf.getName(), false, loader);
+            } catch (ClassNotFoundException e) {
+            }
+            if (interfaceClass != intf) {
+                throw new IllegalArgumentException(
+                    intf + &quot; is not visible from class loader&quot;);
+            }
+            //&#x9A8C;&#x8BC1;&#x8FD9;&#x4E2A;Class&#x5BF9;&#x8C61;&#x662F;&#x4E0D;&#x662F;&#x63A5;&#x53E3;
+            if (!interfaceClass.isInterface()) {
+                throw new IllegalArgumentException(
+                    interfaceClass.getName() + &quot; is not an interface&quot;);
+            }
+            if (interfaceSet.put(interfaceClass, Boolean.TRUE) != null) {
+                throw new IllegalArgumentException(
+                    &quot;repeated interface: &quot; + interfaceClass.getName());
+            }
+        }
+
+        String proxyPkg = null;     // package to define proxy class in
+        int accessFlags = Modifier.PUBLIC | Modifier.FINAL;
+
+        /*
+         * Record the package of a non-public proxy interface so that the
+         * proxy class will be defined in the same package.  Verify that
+         * all non-public proxy interfaces are in the same package.
+         */
+        for (Class&lt;?&gt; intf : interfaces) {
+            int flags = intf.getModifiers();
+            if (!Modifier.isPublic(flags)) {
+                accessFlags = Modifier.FINAL;
+                String name = intf.getName();
+                int n = name.lastIndexOf(&apos;.&apos;);
+                String pkg = ((n == -1) ? &quot;&quot; : name.substring(0, n + 1));
+                if (proxyPkg == null) {
+                    proxyPkg = pkg;
+                } else if (!pkg.equals(proxyPkg)) {
+                    throw new IllegalArgumentException(
+                        &quot;non-public interfaces from different packages&quot;);
+                }
+            }
+        }
+
+        if (proxyPkg == null) {
+            // if no non-public proxy interfaces, use com.sun.proxy package
+            proxyPkg = ReflectUtil.PROXY_PACKAGE + &quot;.&quot;;
+        }
+
+        /*
+         * Choose a name for the proxy class to generate.
+         */
+        long num = nextUniqueNumber.getAndIncrement();
+        String proxyName = proxyPkg + proxyClassNamePrefix + num;
+
+        /*
+         * 
+         * &#x751F;&#x6210;&#x6307;&#x5B9A;&#x4EE3;&#x7406;&#x7C7B;&#x7684;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;
+         */
+        byte[] proxyClassFile = ProxyGenerator.generateProxyClass(
+            proxyName, interfaces, accessFlags);
+        try {
+            return defineClass0(loader, proxyName,
+                                proxyClassFile, 0, proxyClassFile.length);
+        } catch (ClassFormatError e) {
+            /*
+             * A ClassFormatError here means that (barring bugs in the
+             * proxy class generation code) there was some other
+             * invalid aspect of the arguments supplied to the proxy
+             * class creation (such as virtual machine limitations
+             * exceeded).
+             */
+            throw new IllegalArgumentException(e.toString());
+        }
+    }
+}
+</code></pre><p>&#x4E00;&#x7CFB;&#x5217;&#x68C0;&#x67E5;&#x540E;&#xFF0C;&#x8C03;&#x7528;ProxyGenerator.generateProxyClass&#x6765;&#x751F;&#x6210;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x3002;</p>
+<p>  public static byte[] generateProxyClass(final String var0, Class&lt;?&gt;[] var1, int var2) {
+        ProxyGenerator var3 = new ProxyGenerator(var0, var1, var2);
+        // &#x771F;&#x6B63;&#x7528;&#x6765;&#x751F;&#x6210;&#x4EE3;&#x7406;&#x7C7B;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;&#x5728;&#x8FD9;&#x91CC;
+        final byte[] var4 = var3.generateClassFile();
+        // &#x4FDD;&#x5B58;&#x4EE3;&#x7406;&#x7C7B;&#x7684;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;
+        if(saveGeneratedFiles) {
+            AccessController.doPrivileged(new PrivilegedAction<void>() {
+                public Void run() {
+                    try {
+                        int var1 = var0.lastIndexOf(46);
+                        Path var2;
+                        if(var1 &gt; 0) {
+                            Path var3 = Paths.get(var0.substring(0, var1).replace(&apos;.&apos;, File.separatorChar), new String[0]);
+                            Files.createDirectories(var3, new FileAttribute[0]);
+                            var2 = var3.resolve(var0.substring(var1 + 1, var0.length()) + &quot;.class&quot;);
+                        } else {
+                            var2 = Paths.get(var0 + &quot;.class&quot;, new String[0]);
+                        }</void></p>
+<pre><code>                    Files.write(var2, var4, new OpenOption[0]);
+                    return null;
+                } catch (IOException var4x) {
+                    throw new InternalError(&quot;I/O exception saving generated file: &quot; + var4x);
+                }
+            }
+        });
+    }
+
+    return var4;
+}
+</code></pre><p>&#x751F;&#x6210;&#x4EE3;&#x7406;&#x7C7B;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x7684;generateClassFile&#x65B9;&#x6CD5;:</p>
+<pre><code>private byte[] generateClassFile() {
+    //&#x4E0B;&#x9762;&#x4E00;&#x7CFB;&#x5217;&#x7684;addProxyMethod&#x65B9;&#x6CD5;&#x662F;&#x5C06;&#x63A5;&#x53E3;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x548C;Object&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x6DFB;&#x52A0;&#x5230;&#x4EE3;&#x7406;&#x65B9;&#x6CD5;&#x4E2D;(proxyMethod)
+    this.addProxyMethod(hashCodeMethod, Object.class);
+    this.addProxyMethod(equalsMethod, Object.class);
+    this.addProxyMethod(toStringMethod, Object.class);
+    Class[] var1 = this.interfaces;
+    int var2 = var1.length;
+
+    int var3;
+    Class var4;
+    //&#x83B7;&#x5F97;&#x63A5;&#x53E3;&#x4E2D;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x5E76;&#x6DFB;&#x52A0;&#x5230;&#x4EE3;&#x7406;&#x65B9;&#x6CD5;&#x4E2D;
+    for(var3 = 0; var3 &lt; var2; ++var3) {
+        var4 = var1[var3];
+        Method[] var5 = var4.getMethods();
+        int var6 = var5.length;
+
+        for(int var7 = 0; var7 &lt; var6; ++var7) {
+            Method var8 = var5[var7];
+            this.addProxyMethod(var8, var4);
+        }
+    }
+
+    Iterator var11 = this.proxyMethods.values().iterator();
+
+    List var12;
+    while(var11.hasNext()) {
+        var12 = (List)var11.next();
+        checkReturnTypes(var12);
+    }
+
+    Iterator var15;
+    try {
+        //&#x751F;&#x6210;&#x4EE3;&#x7406;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;
+        this.methods.add(this.generateConstructor());
+        var11 = this.proxyMethods.values().iterator();
+
+        while(var11.hasNext()) {
+            var12 = (List)var11.next();
+            var15 = var12.iterator();
+
+            while(var15.hasNext()) {
+                ProxyGenerator.ProxyMethod var16 = (ProxyGenerator.ProxyMethod)var15.next();
+                this.fields.add(new ProxyGenerator.FieldInfo(var16.methodFieldName, &quot;Ljava/lang/reflect/Method;&quot;, 10));
+                this.methods.add(var16.generateMethod());
+            }
+        }
+
+        this.methods.add(this.generateStaticInitializer());
+    } catch (IOException var10) {
+        throw new InternalError(&quot;unexpected I/O Exception&quot;, var10);
+    }
+
+    if(this.methods.size() &gt; &apos;\uffff&apos;) {
+        throw new IllegalArgumentException(&quot;method limit exceeded&quot;);
+    } else if(this.fields.size() &gt; &apos;\uffff&apos;) {
+        throw new IllegalArgumentException(&quot;field limit exceeded&quot;);
+    } else {
+        this.cp.getClass(dotToSlash(this.className));
+        this.cp.getClass(&quot;java/lang/reflect/Proxy&quot;);
+        var1 = this.interfaces;
+        var2 = var1.length;
+
+        for(var3 = 0; var3 &lt; var2; ++var3) {
+            var4 = var1[var3];
+            this.cp.getClass(dotToSlash(var4.getName()));
+        }
+
+        this.cp.setReadOnly();
+        ByteArrayOutputStream var13 = new ByteArrayOutputStream();
+        DataOutputStream var14 = new DataOutputStream(var13);
+
+        try {
+            var14.writeInt(-889275714);
+            var14.writeShort(0);
+            var14.writeShort(49);
+            this.cp.write(var14);
+            var14.writeShort(this.accessFlags);
+            var14.writeShort(this.cp.getClass(dotToSlash(this.className)));
+            var14.writeShort(this.cp.getClass(&quot;java/lang/reflect/Proxy&quot;));
+            var14.writeShort(this.interfaces.length);
+            Class[] var17 = this.interfaces;
+            int var18 = var17.length;
+
+            for(int var19 = 0; var19 &lt; var18; ++var19) {
+                Class var22 = var17[var19];
+                var14.writeShort(this.cp.getClass(dotToSlash(var22.getName())));
+            }
+
+            var14.writeShort(this.fields.size());
+            var15 = this.fields.iterator();
+
+            while(var15.hasNext()) {
+                ProxyGenerator.FieldInfo var20 = (ProxyGenerator.FieldInfo)var15.next();
+                var20.write(var14);
+            }
+
+            var14.writeShort(this.methods.size());
+            var15 = this.methods.iterator();
+
+            while(var15.hasNext()) {
+                ProxyGenerator.MethodInfo var21 = (ProxyGenerator.MethodInfo)var15.next();
+                var21.write(var14);
+            }
+
+            var14.writeShort(0);
+            return var13.toByteArray();
+        } catch (IOException var9) {
+            throw new InternalError(&quot;unexpected I/O Exception&quot;, var9);
+        }
+    }
+}
+</code></pre><p>&#x5B57;&#x8282;&#x7801;&#x751F;&#x6210;&#x540E;&#xFF0C;&#x8C03;&#x7528;defineClass0&#x6765;&#x89E3;&#x6790;&#x5B57;&#x8282;&#x7801;&#xFF0C;&#x751F;&#x6210;&#x4E86;Proxy&#x7684;Class&#x5BF9;&#x8C61;&#x3002;&#x5728;&#x4E86;&#x89E3;&#x5B8C;&#x4EE3;&#x7406;&#x7C7B;&#x52A8;&#x6001;&#x751F;&#x6210;&#x8FC7;&#x7A0B;&#x540E;&#xFF0C;&#x751F;&#x4EA7;&#x7684;&#x4EE3;&#x7406;&#x7C7B;&#x662F;&#x600E;&#x6837;&#x7684;&#xFF0C;&#x8C01;&#x6765;&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#x4EE3;&#x7406;&#x7C7B;&#x3002;</p>
+<p>&#x5176;&#x4E2D;&#xFF0C;&#x5728;ProxyGenerator.generateProxyClass&#x51FD;&#x6570;&#x4E2D; saveGeneratedFiles&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF0C;&#x5176;&#x6307;&#x4EE3;&#x662F;&#x5426;&#x4FDD;&#x5B58;&#x751F;&#x6210;&#x7684;&#x4EE3;&#x7406;&#x7C7B;class&#x6587;&#x4EF6;&#xFF0C;&#x9ED8;&#x8BA4;false&#x4E0D;&#x4FDD;&#x5B58;&#x3002;</p>
+<p>&#x5728;&#x524D;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4FEE;&#x6539;&#x4E86;&#x6B64;&#x7CFB;&#x7EDF;&#x53D8;&#x91CF;&#xFF1A;</p>
+<p>System.getProperties().setProperty(&quot;sun.misc.ProxyGenerator.saveGeneratedFiles&quot;, &quot;true&quot;);
+image.png
+&#x5982;&#x56FE;&#xFF0C;&#x751F;&#x6210;&#x4E86;&#x4E24;&#x4E2A;&#x540D;&#x4E3A; Proxy1.class&#x7684;class&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x6D41;&#x7A0B;&#x56FE;</p>
 
                                 
                                 </section>
@@ -344,7 +754,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"设计模式简介","level":"1.2.1","depth":2,"next":{"title":"动态代理","level":"1.2.2","depth":2,"path":"design_patterns/动态代理模式.md","ref":"design_patterns/动态代理模式.md","articles":[]},"previous":{"title":"设计模式","level":"1.2","depth":1,"path":"design_patterns/README.md","ref":"design_patterns/README.md","articles":[{"title":"设计模式简介","level":"1.2.1","depth":2,"path":"design_patterns/设计模式介绍.md","ref":"design_patterns/设计模式介绍.md","articles":[]},{"title":"动态代理","level":"1.2.2","depth":2,"path":"design_patterns/动态代理模式.md","ref":"design_patterns/动态代理模式.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["chapter-fold","toc","simple-page-toc"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"sphard","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"王伟的学习资料","language":"zh-hans","gitbook":"*","description":"gitbook电子书教程"},"file":{"path":"design_patterns/设计模式介绍.md","mtime":"2020-09-29T02:44:39.965Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-18T16:34:53.510Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"设计模式简介","level":"1.2.1","depth":2,"next":{"title":"动态代理","level":"1.2.2","depth":2,"path":"design_patterns/动态代理模式.md","ref":"design_patterns/动态代理模式.md","articles":[]},"previous":{"title":"设计模式","level":"1.2","depth":1,"path":"design_patterns/README.md","ref":"design_patterns/README.md","articles":[{"title":"设计模式简介","level":"1.2.1","depth":2,"path":"design_patterns/设计模式介绍.md","ref":"design_patterns/设计模式介绍.md","articles":[]},{"title":"动态代理","level":"1.2.2","depth":2,"path":"design_patterns/动态代理模式.md","ref":"design_patterns/动态代理模式.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["chapter-fold","toc","simple-page-toc","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"sphard","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"王伟的学习资料","language":"zh-hans","gitbook":"*","description":"gitbook电子书教程"},"file":{"path":"design_patterns/设计模式介绍.md","mtime":"2020-10-19T01:19:19.995Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-24T01:19:10.231Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -355,6 +765,10 @@
     
         
         <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
